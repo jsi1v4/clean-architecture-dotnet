@@ -34,6 +34,7 @@ namespace CleanArchMvc.Application.Services
         {
             var categoryEntity = _mapper.Map<Category>(categoryDto);
             await _categoryRepository.Create(categoryEntity);
+            categoryDto.Id = categoryEntity.Id;
         }
 
         public async Task Update(CategoryDTO categoryDto)

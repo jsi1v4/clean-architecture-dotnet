@@ -49,6 +49,11 @@ namespace CleanArchMvc.WebUI.Controllers
                 await _productService.Add(productDto);
                 return RedirectToAction(nameof(Index));
             }
+            else
+            {
+                ViewBag.CategoryId =
+                            new SelectList(await _categoryService.GetCategories(), "Id", "Name");
+            }
             return View(productDto);
         }
 

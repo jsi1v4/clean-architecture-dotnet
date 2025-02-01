@@ -1,5 +1,4 @@
 ﻿using CleanArchMvc.Domain.Validation;
-using System.Text.Json.Serialization;
 
 namespace CleanArchMvc.Domain.Entities
 {
@@ -31,7 +30,7 @@ namespace CleanArchMvc.Domain.Entities
 
         private void ValidateDomain(string name, string description, decimal price, int stock, string image)
         {
-            DomainExceptionValidation.When(string.IsNullOrEmpty(name), 
+            DomainExceptionValidation.When(string.IsNullOrEmpty(name),
                 "Invalid name. Name is required");
 
             DomainExceptionValidation.When(name.Length < 3,
@@ -40,7 +39,7 @@ namespace CleanArchMvc.Domain.Entities
             DomainExceptionValidation.When(string.IsNullOrEmpty(description),
                 "Invalid description. Description is required");
 
-            DomainExceptionValidation.When(description.Length < 5, 
+            DomainExceptionValidation.When(description.Length < 5,
                 "Invalid description, too short, minimum 5 characters");
 
             DomainExceptionValidation.When(price < 0, "Invalid price value");
@@ -57,9 +56,7 @@ namespace CleanArchMvc.Domain.Entities
             Image = image;
 
         }
-
         public int CategoryId { get; set; }
-
         public Category Category { get; set; }
     }
 }

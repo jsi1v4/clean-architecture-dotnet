@@ -2,7 +2,9 @@
 using CleanArchMvc.Domain.Interfaces;
 using CleanArchMvc.Infra.Data.Context;
 using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace CleanArchMvc.Infra.Data.Repositories
@@ -30,7 +32,7 @@ namespace CleanArchMvc.Infra.Data.Repositories
 
         public async Task<IEnumerable<Category>> GetCategories()
         {
-            return await _categoryContext.Categories.ToListAsync();
+            return await _categoryContext.Categories.OrderBy(c=> c.Name).ToListAsync();
         }
 
         public async Task<Category> Remove(Category category)
