@@ -2,8 +2,6 @@
 
 API and web UI built with .NET and clean architecture 🖖.
 
-![**Preview**](preview.png)
-
 ## Sobre
 
 Utilizei este CRUD para aplicar meus estudos da plataforma .NET e clean architecture. Com ela conseguimos criar produtos e categorias numa plataforma.
