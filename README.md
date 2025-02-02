@@ -40,6 +40,11 @@ dotnet restore
 ### Executar em localhost
 
 ```sh
+# Migrations
+dotnet ef --project CleanArchMvc.Infra.Data/CleanArchMvc.Infra.Data.csproj database update
+```
+
+```sh
 # WebUI
 dotnet run --project CleanArchMvc.WebUI/CleanArchMvc.WebUI.csproj
 # API
@@ -51,10 +56,7 @@ dotnet run --project CleanArchMvc.API/CleanArchMvc.API.csproj
 ### Buildar projeto
 
 ```sh
-# WebUI
-dotnet build --project CleanArchMvc.WebUI/CleanArchMvc.WebUI.csproj
-# API
-dotnet build --project CleanArchMvc.API/CleanArchMvc.API.csproj
+dotnet build
 ```
 
 ---
